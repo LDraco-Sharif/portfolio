@@ -1,12 +1,18 @@
-<h1>Hi, I am Sharif</h1>
-<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
-    <mat-tab label="Education">
-        <app-education></app-education>
-    </mat-tab>
-    <mat-tab label="Work Experience">
-        In Progress
-    </mat-tab>
-    <mat-tab label="Projects">
-        In Progress
-    </mat-tab>
-  </mat-tab-group>
+<div class="page">
+    <h4>Md. Shariful Islam</h4>
+    <div class="info">Hi, I am Sharif. I am a software developer.</div>
+    <mat-card>
+        <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+            <mat-tab label="Education" labelClass="tab-label">
+                <app-education></app-education>
+            </mat-tab>
+            <mat-tab label="Work Experience">
+                <app-experience></app-experience>
+            </mat-tab>
+            <mat-tab label="Projects">
+                <app-projects></app-projects>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card>
+    <app-skills class="skills"></app-skills>
+</div>

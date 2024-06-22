@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 10px;
+}
+
+.video-card {
+    width: fit-content;
+}
+
+.card {
+    min-width: fit-content;
+}
+
+.video {
+    border-radius: 5%;
+}

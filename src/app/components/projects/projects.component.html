@@ -1,0 +1,48 @@
+<div class="container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                Project List
+            </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+            In Progress...
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="card">
+        <mat-card-header>
+            <mat-card-title>
+                Personal Projects (Video Games)
+            </mat-card-title>
+            <mat-card-content>
+                
+            </mat-card-content>
+        </mat-card-header>
+
+        <mat-card-content>
+            <ul >
+                <div class="container">
+                <li *ngFor="let info of projectCardsInfo">
+                    <mat-card class="video-card">
+                        <mat-card-header>
+                            <mat-card-subtitle>
+                                {{info.title}}
+                            </mat-card-subtitle>
+                        </mat-card-header>
+
+                        <mat-card-content>
+                            <iframe width="600" height="400" [src]="sanitizer.bypassSecurityTrustResourceUrl(info.src)"
+                                [title]="info.title" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </mat-card-content>
+                    </mat-card>
+                </li>
+            </div>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+</div>

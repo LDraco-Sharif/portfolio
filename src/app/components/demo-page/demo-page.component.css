@@ -1,0 +1,16 @@
+.page {
+    padding: 10px;
+    background-color: ghostwhite;
+    height: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info {
+    overflow: hidden;
+}
+
+.skills {
+    padding-bottom: 10px;
+}

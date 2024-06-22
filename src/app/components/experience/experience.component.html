@@ -1,0 +1,19 @@
+<div class="container">
+    <mat-card *ngFor="let xp of experiences">
+        <mat-card-header>
+            <mat-card-title>
+                {{xp.position}}
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{xp.duration}}
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <ul>
+                <li *ngFor="let w of xp.work">
+                    {{w}}
+                </li>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+</div>
