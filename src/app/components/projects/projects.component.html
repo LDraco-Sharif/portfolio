@@ -2,46 +2,79 @@
     <mat-card>
         <mat-card-header>
             <mat-card-title>
-                Project List
+                Projects
             </mat-card-title>
         </mat-card-header>
 
         <mat-card-content>
-            In Progress...
+            <ul class="personal-projects">
+                <li *ngFor="let project of personalProjectCardsInfo">
+                    <mat-card>
+                        <mat-card-header>
+                            <mat-card-subtitle>
+                                {{project.title}}
+                            </mat-card-subtitle>
+                                <mat-card-subtitle *ngIf="project.links">
+                                    <sub *ngFor="let link of project.links; let i = index">
+                                        <a  [href]="link.link">{{link.name}}</a>
+                                        {{i === project.links.length - 1 ? '' : ' | '}}
+                                    </sub>
+                                    
+                                    
+                                </mat-card-subtitle>
+                        </mat-card-header>
+
+                        <mat-card-content>
+                            <ul>
+                                <li *ngFor="let detail of project.details">
+                                    {{detail}}
+                                </li>
+                            </ul>
+                            <br>
+                            <mat-chip-set>
+                                <mat-chip *ngFor="let tag of project.tags">
+                                    {{tag}}
+                                </mat-chip>
+                            </mat-chip-set>
+                        </mat-card-content>
+                    </mat-card>
+                </li>
+            </ul>
         </mat-card-content>
     </mat-card>
 
     <mat-card class="card">
         <mat-card-header>
             <mat-card-title>
-                Personal Projects (Video Games)
+                Personal Projects (Unity)
             </mat-card-title>
             <mat-card-content>
-                
+
             </mat-card-content>
         </mat-card-header>
 
         <mat-card-content>
-            <ul >
+            <ul>
                 <div class="container">
-                <li *ngFor="let info of projectCardsInfo">
-                    <mat-card class="video-card">
-                        <mat-card-header>
-                            <mat-card-subtitle>
-                                {{info.title}}
-                            </mat-card-subtitle>
-                        </mat-card-header>
+                    <li class="video-card-list" *ngFor="let info of projectCardsInfo">
+                        <mat-card>
+                            <mat-card-header>
+                                <mat-card-subtitle>
+                                    {{info.title}}
+                                </mat-card-subtitle>
+                            </mat-card-header>
 
-                        <mat-card-content>
-                            <iframe width="600" height="400" [src]="sanitizer.bypassSecurityTrustResourceUrl(info.src)"
-                                [title]="info.title" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                            </iframe>
-                        </mat-card-content>
-                    </mat-card>
-                </li>
-            </div>
+                            <mat-card-content>
+                                <iframe width="100%" height="400"
+                                    [src]="sanitizer.bypassSecurityTrustResourceUrl(info.src)" [title]="info.title"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                </iframe>
+                            </mat-card-content>
+                        </mat-card>
+                    </li>
+                </div>
             </ul>
         </mat-card-content>
     </mat-card>

@@ -1,18 +1,38 @@
 .container {
     display: flex;
+    width: 100%;
     flex-direction: column;
     gap: 15px;
-    margin: 10px;
 }
 
-.video-card {
-    width: fit-content;
+.personal-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.video-card-list {
+    width: 100%;
+    scale: 0.1;
+    animation: card-enlarge ease-in-out forwards;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
 }
 
 .card {
     min-width: fit-content;
+    
 }
 
 .video {
     border-radius: 5%;
+}
+
+
+@keyframes card-enlarge {
+
+    to {
+        scale: 1;
+    }
+
 }

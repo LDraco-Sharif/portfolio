@@ -16,7 +16,7 @@ export class ExperienceComponent {
       position: 'Software Engineer II (Enosis Solutions)',
       duration: 'Dec 2023 - Present',
       work: [
-        'Currently working on a task tracker related applicatiion using ASP.Net Web API and Angular',
+        'Collaborated on a task tracker related applicatiion using ASP.Net Web API and Angular',
         'Worked on rewrite of an existing desktop application to web application using ASP.Net Web API and Angular'
       ] 
     },
@@ -31,7 +31,7 @@ export class ExperienceComponent {
       position: 'Game Developer (Arcade Studios BD)',
       duration: 'Oct 2020 - Oct 2021',
       work: [
-        'Worked for Arcade'
+        'Collaborated on creating multiple hyper-casual games in Unity Game Engine'
       ] 
     }
   ];

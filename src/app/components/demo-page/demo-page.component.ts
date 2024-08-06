@@ -3,8 +3,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { EducationComponent } from "../education/education.component";
 import { ProjectsComponent } from "../projects/projects.component";
 import { ExperienceComponent } from "../experience/experience.component";
-import { SkillsComponent } from '../skills/skills.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
 @Component({
     selector: 'app-demo-page',
     standalone: true,
@@ -16,12 +18,30 @@ import { MatCardModule } from '@angular/material/card';
         EducationComponent,
         ProjectsComponent,
         ExperienceComponent,
-        SkillsComponent
+        MatIconModule,
+        MatButtonModule,
+        CommonModule
     ]
 })
+
 export class DemoPageComponent {
-    state = "open";
-    changeState(): void {
-        (this.state == "closed") ? this.state = "open" : this.state = "closed";
-      }
+    readonly socialLinks: {url: string, class: string}[] = [
+        {
+            url: 'mailto:shariful.islam.msi47@gmail.com',
+            class: 'gmail-icon'
+        },
+        {
+            url: 'https://www.linkedin.com/in/md-shariful-islam-00514a244',
+            class: 'linkedin-icon'
+        },
+        {
+            url: 'https://github.com/LDraco-Sharif',
+            class: 'github-icon'
+        },
+        {
+            url: 'https://www.youtube.com/@sharif47',
+            class: 'yt-icon'
+        },
+    ]
 }
+

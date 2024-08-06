@@ -1,16 +1,176 @@
-.page {
+.container {
     padding: 10px;
     background-color: ghostwhite;
     height: calc(100% - 20px);
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 15px;
+    /* width: 100%; */
+}
+
+.page {
+    width: 60%;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 100vh; */
+    gap: 20px;
+    margin-top: 45vh;
+    margin-bottom: 20px;
+    padding: 0;
+    animation: header-scroll;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-timeline: view(7% 50%);
+    animation-range: entry 60% cover 90%;
+}
+
+@keyframes header-scroll {
+
+    to{
+        margin-top: 35vh;
+        height: fit-content;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+
+    }
+    
+    /* 60% {
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    } */
+
+    20% {
+        margin-top: 50vh;
+        flex-direction: row;
+    }
+}
+
+.name {
+    font-size: 50pt;
+    text-align: center;
+    line-height: 25pt;
+    flex-basis: 50%;
+    animation: name-scroll;
+    animation-timeline: view(10% 30%);
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes name-scroll {
+
+    to{
+        font-size: 20pt;
+    }
+    /* 20% {
+    height: fit-content;
+    flex-direction: row;
+    } */
 }
 
 .info {
+    font-size: 40pt;
+    line-height: 20pt;
     overflow: hidden;
+    text-align: center;
+    animation: info-scroll;
+    animation-timeline: view(50% 0%);
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }
 
-.skills {
-    padding-bottom: 10px;
+@keyframes info-scroll {
+
+    to{
+        font-size: 12pt;
+    }
+}
+
+.gmail-icon {
+  background: url('https://img.icons8.com/?size=100&id=qyRpAggnV0zH&format=png&color=000000') center no-repeat;
+  width: 88px;
+  height: 66px;
+  --mdc-fab-container-shape: 10px;
+}
+
+.linkedin-icon {
+    background: url('https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png&color=000000') center no-repeat;
+    width: 75px;
+    height: 76px;
+    --mdc-fab-container-shape: 12px;
+  }
+
+  .github-icon {
+    background: url('https://img.icons8.com/?size=100&id=AZOZNnY73haj&format=png&color=000000') center no-repeat;
+    width: 83px;
+    height: 83px;
+    --mdc-fab-container-shape: 50%;
+  }
+
+  .social-links {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 11;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    animation: social-down;
+    animation-timeline: scroll(root);
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-range: entry 0 entry 5%;
+  }
+
+  @keyframes social-down {
+    to {
+        bottom: 0.5vh;
+    }
+  }
+
+  .yt-icon {
+    background: url('https://img.icons8.com/?size=100&id=19318&format=png&color=000000') center no-repeat;
+    width: 80px;
+    height: 59px;
+    --mdc-fab-container-shape: 12px;
+  }
+
+.tabs {
+    margin-top: 50vh;
+    animation: tabs-scroll;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-timeline: view();
+    animation-range: entry 10% cover 50%;
+}
+
+@keyframes tabs-scroll {
+    to {
+        margin-top: 0;
+    }
+}
+
+.projects {
+    width: 60%;
+    opacity: 0;
+    padding-bottom: 10vh;
+    margin-top: 20vh;
+
+    animation: project-fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry 500px cover 850px;
+}
+
+@keyframes project-fade-in {
+    to {
+        opacity: 1;
+        margin-top: 0;
+    }
 }
